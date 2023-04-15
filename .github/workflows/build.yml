@@ -23,14 +23,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: ubuntu-latest
-            triplet: x64-linux
           - os: windows-latest
             triplet: x64-windows-static-md
-          - os: windows-latest
-            triplet: x86-windows-static-md
-          - os: macos-latest
-            triplet: x64-osx
 
     name: ${{matrix.triplet}}
     runs-on: ${{matrix.os}}
@@ -59,5 +53,5 @@ jobs:
 
       - uses: actions/upload-artifact@master
         with:
-          name: CompliedFiles
+          name: Release
           path: ${{ github.workspace }}/builds
