@@ -56,3 +56,8 @@ jobs:
           buildPreset: 'ninja-vcpkg'
           testPreset: 'ninja-vcpkg'
           configurePresetAdditionalArgs: "[ '-DLIBMUMBLE_WARNINGS_AS_ERRORS=ON', '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' ]"
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: CompliedFiles
+          path: ${{ github.workspace }}/builds
